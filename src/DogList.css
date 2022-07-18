@@ -1,0 +1,19 @@
+img{
+height: 350px;
+width:  350px;
+display: block;
+margin-right: auto;
+margin-left: auto;
+margin-bottom: 20px;
+
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    margin-right: 5px;
+    margin-left: 5px;
+
+}

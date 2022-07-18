@@ -1,7 +1,6 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
-import DogDetails from "./DogDetails";
+import "./DogList.css";
 
 /** List of dogs
  *  Returns name and image of dog, and button home
@@ -11,15 +10,22 @@ import DogDetails from "./DogDetails";
  *
  *  App -> Dog
  * */
-function DogList({dogs}) {
 
+function DogList({ dogs }) {
   return (
-    <div>
-      <h1>HellO!</h1>
-      {/* <img src={`../public/perry.jpg`}></img> */}
-      <Link to="/dogs">Home</Link>
-    </div>
-  )
+    <ul>
+      {dogs.map((d) => (
+        <li key={d.name}>
+          <div>
+            <h1>{d.name}</h1>
+            <p>Age: {d.age}</p>
+            <img src={require(`../public/${d.src}.jpg`)}></img>
+            <Link to={`/dogs/${d.name}`}> visit {d.name}</Link>
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 export default DogList;
